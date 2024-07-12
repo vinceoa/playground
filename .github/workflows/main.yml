@@ -1,0 +1,8 @@
+name: Caller Workflow
+on: [push, pull_request]
+jobs:
+  build:
+    uses: vinceoa/.github/workflows/sample-ci.yml@main
+    with:
+      input1: value1
+      input2: value2

@@ -23,4 +23,10 @@ jobs:
           context: "{{defaultContext}}"
           file: build/Dockerfile
           push: false
+          load: true
           tags: app:latest
+      
+      - name: scan image
+        uses: anchore/scan-action@v3
+        with:
+          image: "app:latest"

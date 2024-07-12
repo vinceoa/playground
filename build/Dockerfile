@@ -11,7 +11,7 @@ RUN npm run build
 
 
 FROM node:lts-alpine AS runtime
-RUN apk update && apk upgrade
+#RUN apk update && apk upgrade
 COPY --from=builder /build/dist /app/
 COPY --from=builder /build/node_modules /app/node_modules
 

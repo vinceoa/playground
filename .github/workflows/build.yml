@@ -1,4 +1,4 @@
-name: Continuous Integration
+name: Build images
 
 on:
   push:
@@ -21,6 +21,6 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: "{{defaultContext}}"
-          file: "{{defaultContext}}/build/Dockerfile"
+          file: build/Dockerfile
           push: false
           tags: app:latest

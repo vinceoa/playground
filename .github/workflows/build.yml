@@ -29,10 +29,16 @@ jobs:
       - name: scan image
         uses: anchore/scan-action@v4
         id: scan
+        continue-on-error: true
         with:
           image: "app:latest"
           fail-build: true
           severity-cutoff: critical
+      - run: |
+          echo "Scan Failed!"
+          exit 1
+        if: ${{steps.scan.outcome == 'failure'}}
 
       - name: Inspect action SARIF report
         run: cat ${{ steps.scan.outputs.sarif }}
+        if: ${{ success() || failure() }}

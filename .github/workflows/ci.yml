@@ -17,3 +17,23 @@ jobs:
       - name: Checkout
         id: checkout
         uses: actions/checkout@v4
+
+  npm-audit:
+    name: NPM npm-audit
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout
+        id: checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        id: setup-node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+          cache: npm
+
+      - name: Audit
+        id: npm-audit
+        run: npm audit

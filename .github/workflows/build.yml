@@ -30,3 +30,8 @@ jobs:
         uses: anchore/scan-action@v3
         with:
           image: "app:latest"
+          fail-build: true
+          severity-cutoff: critical
+
+      - name: Inspect action SARIF report
+        run: cat ${{ steps.scan.outputs.sarif }}

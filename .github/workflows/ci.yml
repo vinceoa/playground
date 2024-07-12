@@ -37,3 +37,14 @@ jobs:
       - name: Audit
         id: npm-audit
         run: npm audit
+
+  docker-buildx:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout
+        id: checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3

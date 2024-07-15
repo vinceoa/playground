@@ -1,6 +1,9 @@
 name: Caller Workflow
 on: [push, pull_request]
 jobs:
+  scan:
+    uses: vinceoa/.github/.github/workflows/scanning.yml@main
+    
   build:
     uses: vinceoa/.github/.github/workflows/sample-ci.yml@main
     with:

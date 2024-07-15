@@ -1,5 +1,9 @@
 name: Caller Workflow
-on: [push, pull_request]
+on: 
+  push: 
+    branches:
+      - main
+  workflow_dispatch:
 jobs:
   scan:
     uses: vinceoa/.github/.github/workflows/scanning.yml@main

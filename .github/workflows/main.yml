@@ -5,4 +5,4 @@ jobs:
     uses: vinceoa/.github/.github/workflows/sample-ci.yml@main
     with:
       input1: value1
-      input2: value2
+      input2: ${{vars.OA_BASE_IMAGE}}

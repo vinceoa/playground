@@ -5,13 +5,6 @@ on:
       - main
   workflow_dispatch:
 jobs:
-  scan:
-    uses: vinceoa/.github/.github/workflows/scanning.yml@main
+  deploy:
+    uses: vinceoa/.github/.github/workflows/deploy.yml@main
     
-  build:
-    needs: 
-      - scan
-    uses: vinceoa/.github/.github/workflows/sample-ci.yml@main
-    with:
-      input1: value1
-      input2: ${{vars.OA_BASE_IMAGE}}

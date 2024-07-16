@@ -5,6 +5,13 @@ on:
       - main
   workflow_dispatch:
 jobs:
+
+  build:
+    uses: vinceoa/.github/.github/workflows/builder.yml@main
+    with:
+      image-type: web
+
+
   deploy:
     uses: vinceoa/.github/.github/workflows/deploy.yml@main
     

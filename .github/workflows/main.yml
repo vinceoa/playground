@@ -13,6 +13,8 @@ jobs:
 
 
   deploy:
+    needs:
+      - build
     uses: vinceoa/.github/.github/workflows/deploy.yml@main
     
   slack:

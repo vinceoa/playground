@@ -3,7 +3,7 @@ name: Build images
 on:
   push:
     branches:
-      - development
+      - development-never
 
 jobs:
   docker-buildx:

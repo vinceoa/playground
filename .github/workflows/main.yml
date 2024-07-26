@@ -2,7 +2,7 @@ name: Deployer Workflow
 on: 
   push: 
     branches:
-      - main
+      - main-never
   workflow_dispatch:
 jobs:
 
